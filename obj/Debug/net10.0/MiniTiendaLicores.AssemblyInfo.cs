@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniTiendaLicores")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27e16e0a20841d7988978a3971bdb6ff89efd9ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e67cde23cbbba63b60b682028fdcf19bf0c1c07")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniTiendaLicores")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniTiendaLicores")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
