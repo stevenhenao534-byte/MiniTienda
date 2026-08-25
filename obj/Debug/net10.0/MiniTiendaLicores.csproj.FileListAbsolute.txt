@@ -12,3 +12,4 @@ C:\C# Code\MiniTiendaLicores\obj\Debug\net10.0\refint\MiniTiendaLicores.dll
 C:\C# Code\MiniTiendaLicores\obj\Debug\net10.0\MiniTiendaLicores.pdb
 C:\C# Code\MiniTiendaLicores\obj\Debug\net10.0\MiniTiendaLicores.genruntimeconfig.cache
 C:\C# Code\MiniTiendaLicores\obj\Debug\net10.0\ref\MiniTiendaLicores.dll
+C:\C# Code\MiniTiendaLicores\obj\Debug\net10.0\MiniTiendaLicores.sourcelink.json
