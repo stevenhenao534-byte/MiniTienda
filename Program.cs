@@ -1,8 +1,9 @@
-﻿using MiniTiendaLicores.Services;
+﻿using MiniTiendaLicores.Models;
+using MiniTiendaLicores.Services;
 
-var productsService = new ProductsService();
-
-bool running = true;
+var productService = new ProductsService();
+var cartService = new CartService();
+var running = true;
 
 while (running)
 {
@@ -12,24 +13,24 @@ while (running)
     Console.WriteLine("3. Ver carrito");
     Console.WriteLine("4. Finalizar compra");
     Console.WriteLine("5. Salir");
+    Console.Write("\nSeleccione una opción: ");
 
-    Console.Write("Seleccione una opción: ");
     string option = Console.ReadLine() ?? string.Empty;
 
     switch (option)
     {
         case "1":
-            productsService.ShowProducts();
+            productService.ShowProducts();
             break;
 
         case "2":
             Console.Write("Ingrese el ID del producto: ");
             if (int.TryParse(Console.ReadLine(), out int productId))
             {
-                var product = productsService.GetProductById(productId);
-                if (product != null)
+                Product? product = productService.GetProductById(productId);
+                if (product is not null)
                 {
-                    Console.WriteLine($"Producto encontrado: {product.Name} - ${product.Price:N0}");
+                    cartService.AddToCart(product);
                 }
                 else
                 {
@@ -43,10 +44,31 @@ while (running)
             break;
 
         case "3":
-            running = false;
+            cartService.ShowCart();
             break;
+
+        case "4":
+            cartService.ShowCart();
+            Console.Write("\n¿Confirmar compra? (S/N): ");
+            string confirm = Console.ReadLine() ?? string.Empty;
+
+            if (confirm.Equals("S", StringComparison.OrdinalIgnoreCase))
+            {
+                cartService.FinalizePurchase();
+            }
+            else
+            {
+                Console.WriteLine("Compra cancelada.");
+            }
+            break;
+
+        case "5":
+            running = false;
+            Console.WriteLine("Saliendo de la aplicación. ¡Hasta luego!");
+            break;
+
         default:
-            Console.WriteLine("Opción inválida. Intente nuevamente.");
+            Console.WriteLine("Opción inválida. Intente de nuevo.");
             break;
     }
 }
