@@ -14,7 +14,7 @@ Mini sistema de compras desarrollado en C# para practicar Git y GitHub.
 
 - C#
 - .NET
-- Git
+- Git 
 - GitHub
 
  Flujo de trabajo
